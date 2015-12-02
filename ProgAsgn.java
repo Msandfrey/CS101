@@ -6,5 +6,6 @@ class UIMS{
     Hashtable<String, Integer> numeros = new Hashtable<String, Integer>();  //new hashtable
     
     System.out.println(numeros.size());
+    
   }
 }
