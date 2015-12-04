@@ -41,12 +41,22 @@ class Conversion{
     
   }
   
-  public int[] bitseqToBigNum(int[] bs, int k){
-    
+  public int[] bitseqToBigNum(int[] bs, int k){     //need to find out what k is for here
+    int bn = 0; 
+    for(int i = 0; i < bs.size(); i++){
+      bn = bs[i]*2^i +bn
+    }
+    return bn;
   }
   
-  public int[] numToDigitseq(int n){
-    
+  public int[] numToDigitseq(int n){    //need to find out size to make bs
+    int i = 0;
+    while(n>1){                   //change n into a binary number
+      int n2 = n/2;
+      bs[i] = n - 2*n2;
+      n = n2;
+    }
+    return bs[];
   }
   
 }
