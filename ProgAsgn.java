@@ -8,7 +8,16 @@ class UIMS{
     System.out.println(numeros.size());
     
   }
-}
+  public boolean isAvailable(String uid){  //go through hash table and check if uid available
+    if() return true
+    else System.out.println("user name already taken.");
+   }
+   
+   public void add(String uid){
+     if( isAvailable == true ){}
+   }
+   
+  }
 
 class Conversion{
   public int[] stringToBitSeq(String s){
