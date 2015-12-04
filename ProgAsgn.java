@@ -38,7 +38,31 @@ class Conversion{
   }
   
   public int[] bitseqToDigiteq(int[] bs, int k){
+    int test = bs.size() % k;                               //check if there are enough digits 
+    if(test == 0) int[] bins = bs[];                        //if there are, then put bs into bins and continur
+    else{
+      int[] bins = new int[bs.size()+test];                 //if not, then make new array with however many extra digits we need
+      for(int i = 0; i < test; i++) bins[i] = 0;            //make the added extra digits 0
+      for(i = 0; i < bs.size(); i++) bins[test+i] = bs[i];  //and add in the rest of bs array
+    }
     
+    int digit = bs.size()/k;                                //get the number of digits for digit array
+    int[] ds = new int[digit];                              //make the digit array
+    int m = 1;                                              
+    i = 0;                                                  //set i back to 0
+    
+    while(m < digit){
+      int[] temp = new int[k];                              //create a temp array to hold each digit in binary
+      int q = 0;
+      for(i; i < m*k; i++){                                 //store each set of k digits in temp, moving to the 
+        temp[q] = bins[i];                                  //next set of k digits in each iteration of the while
+        q++;
+      }
+      for(int j = 0; j < k; j++){                           //then go through the temp array
+        ds[m-1] = ds[m-1] + temp[j]*2^(k-(j+1));            //convert from binary and store in the digit sequence array
+      }
+      m++                                                   //iterate m to get the next set of k digits in the bins array
+    }
   }
   
   public int[] bitseqToBigNum(int[] bs, int k){     //need to find out what k is for here
