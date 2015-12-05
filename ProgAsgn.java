@@ -4,9 +4,24 @@ import java.util.Scanner;       //scanner to input usernames
 class UIMS{
   public static void main(String[] args){
     Hashtable<String, Integer> numeros = new Hashtable<String, Integer>();  //new hashtable
+    int cid=0;
     
     System.out.println(numeros.size());
     
+  }
+  public boolean isAvailable(String s){
+    String uid=s;
+    String p;
+    for(int i=0;i<numeros.size();i++){ //go through the hashtable
+      
+      if(uid==p){System.out.println("user name not available"}
+      else return true;
+    
+  }
+  public void add(String s){
+    if(isAvaiable == true){
+      
+    }
   }
 }
 
