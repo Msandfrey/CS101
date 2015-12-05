@@ -1,5 +1,7 @@
 import java.util.Hashtable;     //java hash table class
 import java.util.Scanner;       //scanner to input usernames
+import java.util.Set;
+import java.util.Iterator;
 
 class UIMS{
   public static void main(String[] args){
@@ -12,16 +14,27 @@ class UIMS{
   public boolean isAvailable(String s){  //go through hash table and check if uid available
     String uid=s;
     String p;
-    for(int i=0;i<numeros.size();i++){ //go through the hashtable
-      
-      if(uid==p){System.out.println("user name not available"}
+    Set<String> keys = numeros.keySet();
+    Iterator<String> itr = keys.iterator();
+    while(itr.hasNext()){        
+      p=itr.next();
+      if(uid.equals(p)){
+        System.out.println("user name not available");
+        return false;
+      }
       else return true;
    }
+  }
    
    public void add(String s){
      if( isAvailable == true ){
+       int index=s.hashCode();
        
+       cid=cid++;
      }
+   }
+   public void reallocate(){
+     
    }
   }
 
@@ -98,4 +111,9 @@ class Conversion{
     return bs[];
   }
   
+}
+class Sitem{
+  String uid;
+  int cid;
+  Node next;
 }
