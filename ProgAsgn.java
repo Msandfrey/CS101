@@ -49,8 +49,10 @@ class UIMS{
      
    }
    
-   public int load(){
-     
+   public double load(int cid, int m, Hashtable hsh){
+     double load = cid / m;
+     if(load > .75) reallocate(hsh);
+     return load;
    }
    
    public void reallocate(Hashtable hsh){
