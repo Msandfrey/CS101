@@ -6,7 +6,8 @@ import java.util.Iterator;
 class UIMS{
   public static void main(String[] args){
     Hashtable<String, Integer> numeros = new Hashtable<String, Integer>();  //new hashtable
-    int cid = 0;
+    int cid = 0;                //initial customer id
+    int m = 4099;               //size of hash table
     
     System.out.println(numeros.size());
     
@@ -33,6 +34,19 @@ class UIMS{
        cid=cid++;
      }
    }
+   
+   public int hash(String uid){
+     
+   }
+   
+   public void generateSalt(){
+     
+   }
+   
+   public int load(){
+     
+   }
+   
    public void reallocate(){
      
    }
