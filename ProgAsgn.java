@@ -39,6 +39,10 @@ class UIMS{
      }
    }
    
+   public int lookupCustomerId(String uid){
+     
+   }
+   
    public int hash(String uid, Hashtable hsh){
      int index = uid.hashCode();
      index = index % hsh.size();
