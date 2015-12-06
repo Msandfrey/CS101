@@ -39,8 +39,10 @@ class UIMS{
      }
    }
    
-   public int lookupCustomerId(String uid){
-     
+   public int lookupCustomerId(String uid,SLItemList list){
+     SItem cid = list.find(uid);
+     if(cid == null)return 0;
+     return cid.customerId;
    }
    
    public int hash(String uid, Hashtable hsh){
