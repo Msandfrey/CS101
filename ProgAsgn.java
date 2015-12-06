@@ -126,6 +126,7 @@ class Conversion{
       }
       m++;                                                  //iterate m to get the next set of k digits in the bins array
     }
+    return ds;
   }
   
   public int bitseqToBigNum(int[] bs, int k){     //need to find out what k is for here
