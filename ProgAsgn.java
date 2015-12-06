@@ -23,8 +23,8 @@ class UIMS{
         System.out.println("user name not available");
         return false;
       }
-      else return true;
    }
+   return true;
   }
    
    public void add(String s, int cid,Hashtable hsh){
