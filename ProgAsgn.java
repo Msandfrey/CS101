@@ -1,13 +1,13 @@
-/import java.util.Hashtable<String,Integer>;     //java hash table class
+import java.util.Hashtable<String,Integer>;     //java hash table class
 import java.util.Scanner;       //scanner to input usernames
 import java.util.Set;
 import java.util.Iterator;
 
 class UIMS{
   public static void main(String[] args){
-    Hashtable<String, Integer> numeros = new Hashtable<String, Integer>();  //new hashtable
     int cid = 0;                //initial customer id
     int m = 4099;               //size of hash table
+    Hashtable<String, Integer> numeros = new Hashtable<String, Integer>(4099);  //new hashtable
     
     System.out.println(numeros.size());
     
@@ -23,8 +23,8 @@ class UIMS{
         System.out.println("user name not available");
         return false;
       }
-   }
-   return true;
+    }
+    return true;
   }
    
    public void add(String s, int cid,Hashtable hsh){
@@ -75,7 +75,7 @@ class SLItemList{
 
 class Conversion{
   public int[] stringToBitSeq(String s){
-    char[] order= {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l',
+    char[] order = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l',
                    'm','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G',
                    'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
     String uid= s;
@@ -113,13 +113,15 @@ class Conversion{
     int digit = bs.length/k;                                //get the number of digits for digit array
     int[] ds = new int[digit];                              //make the digit array
     int m = 1;                                                  //set i back to 0
+    int holder = 0;
     
     while(m < digit){
       int[] temp = new int[k];                              //create a temp array to hold each digit in binary
       int q = 0;
-      for(int i; i < m*k; i++){                                 //store each set of k digits in temp, moving to the 
+      for(int i=holder; i < m*k; i++){                                 //store each set of k digits in temp, moving to the 
         temp[q] = bins[i];                                  //next set of k digits in each iteration of the while
         q++;
+        holder = i;
       }
       for(int j = 0; j < k; j++){                           //then go through the temp array
         ds[m-1] = ds[m-1] + temp[j]*2^(k-(j+1));            //convert from binary and store in the digit sequence array
@@ -139,7 +141,7 @@ class Conversion{
   
   public int[] numToDigitseq(int n){    //need to find out size to make bs
     int i = 0;
-    int[] bs;
+    int[] bs = new int[6];
     while(n>1){                   //change n into a binary number
       int n2 = n/2;
       bs[i] = n - 2*n2;
