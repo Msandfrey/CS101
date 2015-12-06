@@ -38,6 +38,25 @@ class UIMS{
    }
   }
 
+class SLItemList{
+  public header{
+    Node next = header;
+  }
+  
+  public void pushFront(String uid, int cid){           //pushes to front of list
+    SItem it = new SItem();                             //make the node to be added to list
+    if(header.next == header) it.next=null;             //if its first in list pointer is null
+    else it.next = header.next;                         //if not then add to front
+    header.next = it;                                   //header points to it now
+    it.userId = uid;                                    //assign usder ID
+    it.customerId = cid;                                //and customer ID
+  }
+  
+  public String find(String uid){                       //find user Id
+    
+  }
+}
+
 class Conversion{
   public int[] stringToBitSeq(String s){
     char[] order=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l',
@@ -112,8 +131,11 @@ class Conversion{
   }
   
 }
-class Sitem{
-  String uid;
-  int cid;
+class SItem{
+  String userId;
+  int customerId;
   Node next;
+  public SItem(){
+    
+  }
 }
