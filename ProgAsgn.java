@@ -139,7 +139,7 @@ class Conversion{
       for(int i=holder; i < m*k; i++){                                 //store each set of k digits in temp, moving to the 
         temp[q] = bins[i];                                  //next set of k digits in each iteration of the while
         q++;
-        holder = i;
+        holder = i+1;
       }
       for(int j = 0; j < k; j++){                           //then go through the temp array
         ds[m-1] = ds[m-1] + temp[j]*2^(k-(j+1));            //convert from binary and store in the digit sequence array
