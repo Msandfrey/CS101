@@ -27,7 +27,7 @@ class UIMS{
   }
    
    public void add(String s){
-     if( isAvailable == true ){
+     if( isAvailable(s) == true ){
        int index=s.hashCode();
        
        cid=cid++;
