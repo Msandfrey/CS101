@@ -40,8 +40,8 @@ class UIMS{
    }
    
    public int hash(String uid, Hashtable hsh){
-     int index = s.hashCode();
-     index = index % hsh.length;
+     int index = uid.hashCode();
+     index = index % hsh.size();
      return index;
    }
    
@@ -54,7 +54,7 @@ class UIMS{
    }
    
    public void reallocate(Hashtable hsh){
-     Hashtable<String,Integer> newtable= new Hashtable<String,Integer>(2*hsh.length);
+     Hashtable<String,Integer> newtable= new Hashtable<String,Integer>(2*hsh.size());
    }
   }
 
