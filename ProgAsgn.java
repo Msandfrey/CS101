@@ -74,8 +74,14 @@ class SLItemList{
     it.customerId = cid;                                //and customer ID
   }
   
-  public String find(String uid){                       //find user Id
-    
+  public SItem find(String uid){                       //find user Id
+    SItem newIt = head;                               //create a search object
+    while(newIt != null && newIt.next != head){       //if it is null then not there; if next is head then empty
+        if(newIt.userId.equals(uid)){                 //testing for same uid
+            return newIt;                             //if so its found
+        }else newIt = newIt.next;                     //if not continue through list
+    }
+    return null;                                      //signifies not it list
   }
 }
 
