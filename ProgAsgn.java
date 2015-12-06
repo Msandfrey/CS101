@@ -1,4 +1,4 @@
-import java.util.Hashtable<String,Integer>;     //java hash table class
+import java.util.Hashtable;     //java hash table class
 import java.util.Scanner;       //scanner to input usernames
 import java.util.Set;
 import java.util.Iterator;
@@ -9,6 +9,7 @@ class UIMS{
     int m = 4099;               //size of hash table
     Hashtable<String, Integer> numeros = new Hashtable<String, Integer>(4099);  //new hashtable
     
+    Conversion c = new Conversion();
     System.out.println(numeros.size());
     
   }
@@ -30,13 +31,18 @@ class UIMS{
    public void add(String s, int cid,Hashtable hsh){
      if(isAvailable(s,hsh) == true ){
        int index=s.hashCode();
-       
        cid=cid++;
+       SItem newuser = new SItem();
+       newuser.userId = s;
+       newuser.customerId = cid;
+       newuser.next = null;
      }
    }
    
-   public int hash(String uid){
-     
+   public int hash(String uid, Hashtable hsh){
+     int index = s.hashCode();
+     index = index % hsh.length;
+     return index;
    }
    
    public void generateSalt(){
@@ -47,8 +53,8 @@ class UIMS{
      
    }
    
-   public void reallocate(){
-     
+   public void reallocate(Hashtable hsh){
+     Hashtable<String,Integer> newtable= new Hashtable<String,Integer>(2*hsh.length);
    }
   }
 
